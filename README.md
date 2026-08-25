@@ -25,13 +25,12 @@ It provides tools for creating, configuring and preparing DynamX-related content
 
 ## Installation
 
-1. Download or clone this repository.
-2. Install the addon through Blender.
-3. Open Blender and go to:
+1. Download the latest **Blenamx ADDON** release from the GitHub Releases page.
+2. Open Blender and go to:
    `Edit > Preferences > Add-ons`
-4. Select **Install...**
-5. Select the Blenamx addon ZIP file.
-6. Enable the addon.
+3. Select **Install...**
+4. Select the downloaded Blenamx `.zip` file.
+5. Enable **Blenamx ADDON** if needed.
 
 ## Usage
 

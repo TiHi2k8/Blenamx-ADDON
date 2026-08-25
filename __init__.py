@@ -1,11 +1,11 @@
 bl_info = {
     "name": "Blenamx ADDON",
-    "author": "TiHi2k8 / KI",
-    "version": (0, 1, 0),
-    "blender": (2, 80, 0),
+    "author": "TiHi2k8 / AI",
+    "version": (1, 0, 0),
+    "blender": (5, 2, 0),
     "location": "Topbar > Window",
     "description": "A Blender addon for creating and managing DynamX assets more easily.",
-    "warning": "Experimental",
+    "warning": "In Development",
     "wiki_url": "",
     "category": "Workspace",
 }

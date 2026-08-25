@@ -14,7 +14,7 @@ def load_licensed_model(filename):
 
 
 SEAT_OBJ_CONTENT = load_licensed_model("seat.obj")
-SEAT_STANDING_OBJ_CONTENT = load_licensed_model("seat_standing.obj")
+SEAT_STANDING_OBJ_CONTENT = load_licensed_model("clothing_reference_steve.obj")
 
 
 class DYNMX_OT_summon_seat(bpy.types.Operator):

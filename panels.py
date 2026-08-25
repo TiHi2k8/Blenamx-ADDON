@@ -180,7 +180,7 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
 
         if not is_car or step == 0:
             if is_car:
-                layout.label(text="Schritt 1/9: Pack", icon='INFO')
+                layout.label(text="Step 1/9: Pack", icon='INFO')
 
             box = layout.box()
             box.prop(scene, "dynamx_pack_path", text="Path")
@@ -197,11 +197,11 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
                 layout.separator()
                 next_row = layout.row()
                 next_row.scale_y = 1.2
-                next_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+                next_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 1:
             vehicle_box = layout.box()
-            vehicle_box.label(text="Schritt 2/9: Vehicle", icon='AUTO')
+            vehicle_box.label(text="Step 2/9: Vehicle", icon='AUTO')
             vehicle_box.label(text="Vehicle Settings", icon='AUTO')
             vehicle_box.prop(scene, "dynamx_vehicle_name", text="Vehicle Name")
             vehicle_box.prop(scene, "dynamx_vehicle_description", text="Description")
@@ -238,15 +238,15 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             nav_row = layout.row(align=True)
             nav_row.scale_y = 1.2
-            back_op = nav_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = nav_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            nav_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 2:
             steering_obj = _find_steering_wheel_object()
 
             essentials = layout.box()
-            essentials.label(text="Schritt 3/9: Steering Wheel", icon='MODIFIER')
+            essentials.label(text="Step 3/9: Steering Wheel", icon='MODIFIER')
 
             sw_box = essentials.box()
             sw_box.label(text="Steering Wheel", icon='ORIENTATION_GIMBAL')
@@ -268,12 +268,12 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             back_row = layout.row(align=True)
             back_row.scale_y = 1.2
-            back_op = back_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = back_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            back_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            back_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 3:
-            layout.label(text="Schritt 4/9: Seat", icon='OUTLINER_COLLECTION')
+            layout.label(text="Step 4/9: Seat", icon='OUTLINER_COLLECTION')
 
             row = layout.row()
             row.scale_y = 1.3
@@ -299,12 +299,12 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             nav_row = layout.row(align=True)
             nav_row.scale_y = 1.2
-            back_op = nav_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = nav_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            nav_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 4:
-            layout.label(text="Schritt 5/9: Hitbox", icon='MESH_CUBE')
+            layout.label(text="Step 5/9: Hitbox", icon='MESH_CUBE')
 
             row = layout.row()
             row.scale_y = 1.3
@@ -326,12 +326,12 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             nav_row = layout.row(align=True)
             nav_row.scale_y = 1.2
-            back_op = nav_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = nav_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            nav_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 5:
-            layout.label(text="Schritt 6/9: Wheels", icon='MOD_SOLIDIFY')
+            layout.label(text="Step 6/9: Wheels", icon='MOD_SOLIDIFY')
 
             box = layout.box()
             if hasattr(scene, 'dynamx_wheel_model'):
@@ -380,12 +380,12 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             nav_row = layout.row(align=True)
             nav_row.scale_y = 1.2
-            back_op = nav_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = nav_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            nav_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         elif step == 6:
-            layout.label(text="Schritt 7/9: Basic Addon", icon='PLUGIN')
+            layout.label(text="Step 7/9: Basic Addon", icon='PLUGIN')
 
             _draw_basicaddon_section(layout, scene, context, show_title=False)
 
@@ -397,7 +397,7 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
 
         elif step == 7:
-            layout.label(text="Schritt 8/9: Lights", icon='LIGHT')
+            layout.label(text="Step 8/9: Lights", icon='LIGHT')
 
             if hasattr(scene, 'dynamx_way_sender'):
                 layout.prop(scene, 'dynamx_way_sender', text='Way Sender')
@@ -442,12 +442,12 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             nav_row = layout.row(align=True)
             nav_row.scale_y = 1.2
-            back_op = nav_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = nav_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
-            nav_row.operator("dynamx.setup_dynamx", text="Weiter", icon='TRIA_RIGHT')
+            nav_row.operator("dynamx.setup_dynamx", text="Next", icon='TRIA_RIGHT')
 
         else:
-            layout.label(text="Schritt 9/9: OBJ Export", icon='EXPORT')
+            layout.label(text="Step 9/9: OBJ Export", icon='EXPORT')
 
             scale_box = layout.box()
             scale_box.label(text="Vehicle Scale", icon='TRANSFORM_ORIGINS')
@@ -464,7 +464,7 @@ class DYNMX_PT_setup_main(bpy.types.Panel):
             layout.separator()
             back_row = layout.row()
             back_row.scale_y = 1.2
-            back_op = back_row.operator("dynamx.setup_dynamx", text="Zuruck", icon='TRIA_LEFT')
+            back_op = back_row.operator("dynamx.setup_dynamx", text="Back", icon='TRIA_LEFT')
             back_op.go_back = True
 
 
@@ -1033,7 +1033,7 @@ class DYNMX_PT_clothing_panel(bpy.types.Panel):
                 rop = vrow.operator("dynamx.remove_material_variant", text="", icon='X')
                 rop.index = idx
 
-        variants_box.label(text="Wird beim Set Clothing in die armor_*.dynx geschrieben", icon='INFO')
+        variants_box.label(text="Will be written into armor.dynx when using Set Clothing", icon='INFO')
 
         parts.separator()
         part_names = ("headModel", "bodyModel", "leftArmModel", "rightArmModel", "leftLegModel", "rightLegModel")
